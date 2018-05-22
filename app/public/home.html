@@ -12,9 +12,22 @@
 
     <!--Local Styling-->
     <style>
+
+        input:not([type]):focus:not([readonly])+label,
+        input[type=text]:not(.browser-default):focus:not([readonly])+label,
+        input[type=password]:not(.browser-default):focus:not([readonly])+label,
+        input[type=email]:not(.browser-default):focus:not([readonly])+label,
+        input[type=url]:not(.browser-default):focus:not([readonly])+label,
+        input[type=time]:not(.browser-default):focus:not([readonly])+label,
+        input[type=date]:not(.browser-default):focus:not([readonly])+label,input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+        input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+        input[type=number]:not(.browser-default):focus:not([readonly])+label,input[type=search]:not(.browser-default):focus:not([readonly])+label,
+        textarea.materialize-textarea:focus:not([readonly])+label{color:#e3710a;}
+
         body {
             background-size: 100%;
             background-image: url("https://beachbarbums.com/wp-content/uploads/2014/09/cocktail-bar-47181.jpg");
+            background-repeat: repeat-y;
         }
         #machotron {
             border-radius: 25px;
@@ -25,61 +38,83 @@
             font-family: 'ABeeZee';font-size: 22px;
             color: white;
         }
-        /*.dataFeed {*/
-        /*border-radius: 25px;*/
-        /*background-color: rgba(31, 31, 31, .9);*/
-        /*}*/
         h1 {
             padding: 0 0 20px 0;
             border-bottom: 3px solid;
             border-color: #e3710a;
         }
-        footer {
+        #footer {
             color: white;
-            background-color: rgba(31, 31, 31, .0);
-        }
-        /*.card {*/
-        /*background-color: rgba(31, 31, 31, .9);*/
-        /*}*/
+            /*background-color: rgba(31, 31, 31, .9);*/
+            /*border-bottom: 3px solid;*/
+            /*border-color: #e3710a;*/
 
+            border-radius: 25px;
+
+        }
         .card-title{
             border-bottom: 1px solid;
-            color: #fafafa;
-            background-color: rgba(31, 31, 31, .9);
+            color: #e3710a;
         }
-        /*.card-body{*/
-        /*border-radius: 25px;*/
-        /*background-color: rgba(31, 31, 31, .9);*/
-        /*}*/
-        .card-content {
+        .dataFeed {
             border-radius: 25px;
             background-color: rgba(31, 31, 31, .9);
+            border: 1px solid white;
+
         }
+
+        #resForm {
+            border-radius: 25px;
+            background-color: rgba(31, 31, 31, .9);
+            border: 1px solid white;
+        }
+
+        #sticky {
+            background-color: rgba(31, 31, 31, .8);
+            margin-top:100px;
+
+
+
+        }
+        #cPanel {
+
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            bottom: 5px;
+
+        }
+        p {
+            color:#e3710a;
+            margin-bottom: 20px;
+        }
+
 
         a {
             font-family: 'ABeeZee';font-size: 15px;
-            background-color: rgba(31, 31, 31, .9);
+
         }
         /* unvisited link */
         a:link {
-            color: #fafafa;
-            background-color: rgba(31, 31, 31, .4);
+            color: white;
         }
 
         /* visited link */
         a:visited {
-            color: #f0f0f0;
+            color: white;
         }
 
         /* mouse over link */
         a:hover {
-            color: #fe7321;
+            color: #e3710a;
         }
 
         /* selected link */
         a:active {
-            color: #fc7120;
+            color: #e3710a;
         }
+
     </style>
 
     <!-- Materialize's compiled and minified CSS -->
@@ -100,18 +135,20 @@
         <br>
 
         <div class="center-align">
-            <a href="/tables" class="waves-effect waves-light btn-large orange darken-3"><i class="large material-icons left">group_work</i>View Tables</a>
-            <a href="/reserve" class="waves-effect waves-light btn-large orange darken-3"><i class="large material-icons right">credit_card</i>Reserve Table</a>
+            <a href="/tables" class="waves-effect waves-light btn-large green darken-4 hotButton"><i class="large material-icons left">group_work</i>View Tables</a>
+            <a href="/reserve" class="waves-effect waves-light btn-large green darken-4"><i class="large material-icons right">credit_card</i>Reserve Table</a>
         </div>
     </div>
 
 </div>
 
-<footer class="page-footer transparent">
-    <div class="container">
-        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/TonyScott44/Hot_Restaurant">GitHub Repo</a></p>
-    </div>
-</footer>
+<div id="sticky">
+    <footer id="footer" class="page-footer  transparent center">
+        <div class= right">
+            <p id="cPanel" class="center-align"><a href="#" id="clear"><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/TonyScott44/Hot_Restaurant">GitHub Repo</a></p>
+        </div>
+    </footer>
+</div>
 
 <!-- Materialize's version of compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>

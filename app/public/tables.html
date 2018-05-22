@@ -15,7 +15,7 @@
         body {
             background-size: 100%;
             background-image: url("https://beachbarbums.com/wp-content/uploads/2014/09/cocktail-bar-47181.jpg");
-            background-repeat: no-repeat;
+            background-repeat: repeat-y;
         }
         #machotron {
             border-radius: 25px;
@@ -53,7 +53,7 @@
 
         #sticky {
             background-color: rgba(31, 31, 31, .9);
-
+            margin-top:100px;
 
 
 
@@ -115,8 +115,8 @@
             <br>
 
             <div class="center-align">
-                <a href="/reserve" class="waves-effect waves-light btn-large orange darken-3"><i class="large material-icons left">group_work</i>Reserve Table</a>
-                <a href="/" class="waves-effect waves-light btn-large orange darken-3"><i class="large material-icons center">home</i></a>
+                <a href="/reserve" class="waves-effect waves-light btn-large green darken-4"><i class="large material-icons left">group_work</i>Reserve Table</a>
+                <a href="/" class="waves-effect waves-light btn-large black darken-4"><i class="large material-icons center">home</i></a>
             </div>
         </div>
         <br>
@@ -220,21 +220,33 @@
                     $("#waitSection").append(waitSection);
 
                     if (i === 0) {
-                        $("#waitCard" + i+1).append( "<i class='material-icons'> filter_1 </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"  + waitingListData[i].qID);
+                        $("#waitCard" + i+1).append( "<i class='material-icons'> filter_1 </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"  + waitingListData[i].guestID);
                     } else if (i === 1) {
-                        $("#waitCard" + i+1).append( "<i class='material-icons'> filter_2 </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"  + waitingListData[i].qID);
+                        $("#waitCard" + i+1).append( "<i class='material-icons'> filter_2 </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"  + waitingListData[i].guestID);
                     } else if (i === 2) {
-                        $("#waitCard" + i+1).append( "<i class='material-icons'> filter_3 </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"  + waitingListData[i].qID);
+                        $("#waitCard" + i+1).append( "<i class='material-icons'> filter_3 </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"  + waitingListData[i].guestID);
                     } else if (i === 3) {
-                        $("#waitCard" + i+1).append( "<i class='material-icons'> filter_4 </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"  + waitingListData[i].qID);
+                        $("#waitCard" + i+1).append( "<i class='material-icons'> filter_4 </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"  + waitingListData[i].guestID);
                     } else if (i === 4) {
-                        $("#waitCard" + i+1).append( "<i class='material-icons'> filter_5 </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"  + waitingListData[i].qID);
+                        $("#waitCard" + i+1).append( "<i class='material-icons'> filter_5 </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"  + waitingListData[i].guestID);
                     }
                     // $("#tableCard" + i+1).append('<h2><span class="medium material-icons center">' + mtrlzNumber + "</span> | " + tableData[i].guestID + "</h2>");
                     console.log(mtrlzNumber);
                 }
             });
     }
+    function clearTable() {
+        var currentURL = window.location.origin;
+        $.ajax({url: currentURL + "/api/clear", method: "POST"})
+    }
+
+    $("#clear").on('click', function(){
+        alert("Initializing...");
+        clearTable();
+        location.reload();
+    });
+
+
     tableQuery();
 </script>
 

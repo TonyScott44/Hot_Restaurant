@@ -10,11 +10,29 @@
     <!--Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
 
+    <!-- Materialize's compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <!--Needed to use Materialize icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!--Local Styling-->
     <style>
+
+        input:not([type]):focus:not([readonly])+label,
+        input[type=text]:not(.browser-default):focus:not([readonly])+label,
+        input[type=password]:not(.browser-default):focus:not([readonly])+label,
+        input[type=email]:not(.browser-default):focus:not([readonly])+label,
+        input[type=url]:not(.browser-default):focus:not([readonly])+label,
+        input[type=time]:not(.browser-default):focus:not([readonly])+label,
+        input[type=date]:not(.browser-default):focus:not([readonly])+label,input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+        input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+        input[type=number]:not(.browser-default):focus:not([readonly])+label,input[type=search]:not(.browser-default):focus:not([readonly])+label,
+        textarea.materialize-textarea:focus:not([readonly])+label{color:#e3710a;}
+
         body {
             background-size: 100%;
-            background-image: url("http://www.v3wall.com/wallpaper/1680_1050/1005/1680_1050_20100520014605470823.jpg");
+            background-image: url("https://beachbarbums.com/wp-content/uploads/2014/09/cocktail-bar-47181.jpg");
+            background-repeat: repeat-y;
         }
         #machotron {
             border-radius: 25px;
@@ -30,41 +48,80 @@
             border-bottom: 3px solid;
             border-color: #e3710a;
         }
-        footer {
+        #footer {
             color: white;
-            background-color: rgba(31, 31, 31, .0);
+            /*background-color: rgba(31, 31, 31, .9);*/
+            /*border-bottom: 3px solid;*/
+            /*border-color: #e3710a;*/
+
+            border-radius: 25px;
+
+        }
+        .card-title{
+            border-bottom: 1px solid;
+            color: #e3710a;
+        }
+        .dataFeed {
+            border-radius: 25px;
+            background-color: rgba(31, 31, 31, .9);
+            border: 1px solid white;
+
+        }
+
+        #resForm {
+            border-radius: 25px;
+            background-color: rgba(31, 31, 31, .9);
+            border: 1px solid white;
+        }
+
+        #sticky {
+            background-color: rgba(31, 31, 31, .9);
+            margin-top:100px;
+
+
+
+        }
+        #cPanel {
+
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            bottom: 5px;
+
+        }
+        p {
+            color:#e3710a;
+            margin-bottom: 20px;
         }
 
         a {
             font-family: 'ABeeZee';font-size: 15px;
-            background-color: rgba(31, 31, 31, .9);
+
         }
         /* unvisited link */
         a:link {
-            color: #fafafa;
-            background-color: rgba(31, 31, 31, .4);
+            color: white;
         }
 
         /* visited link */
         a:visited {
-            color: #f0f0f0;
+            color: white;
         }
 
         /* mouse over link */
         a:hover {
-            color: #fe7321;
+            color: #e3710a;
         }
 
         /* selected link */
         a:active {
-            color: #fc7120;
+            color: #e3710a;
         }
+
     </style>
 
-    <!-- Materialize's compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <!--Needed to use Materialize icons-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 </head>
 
@@ -79,18 +136,68 @@
         <br>
 
         <div class="center-align">
-            <a href="/tables" class="waves-effect waves-light btn-large orange darken-3"><i class="large material-icons left">group_work</i>View Tables</a>
-            <a href="/" class="waves-effect waves-light btn-large orange darken-3"><i class="large material-icons center">home</i></a>
+            <a href="/tables" class="waves-effect waves-light btn-large green darken-4"><i class="large material-icons left">group_work</i>View Tables</a>
+            <a href="/" class="waves-effect waves-light btn-large black darken-3"><i class="large material-icons center">home</i></a>
         </div>
     </div>
 
 </div>
+<br>
+<br>
+<br>
+<br>
 
-<footer class="page-footer transparent">
-    <div class="container">
-        <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/TonyScott44/Hot_Restaurant">GitHub Repo</a></p>
+    <div  id="machotron1 " class=" container col s12 m12">
+        <div  class="card  ">
+            <div  class="card-content ">
+                <div class="card-title">Table Reservation</div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">person_add</i>
+                            <input id="name" type="text" class="validate">
+                            <label for="name">Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">phone_iphone</i>
+                            <input id="phone" type="tel" class="validate">
+                            <label for="phone">Telephone</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                            <span class="helper-text" data-error="wrong" data-success="right"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 ">
+                            <i class="material-icons prefix ">perm_identity</i>
+                            <input id="uniqueID" type="text" class="validate ">
+                            <label for="uniqueID">Unique ID</label>
+                        </div>
+                    </div>
+
+                    <button id="submit" class="btn waves-effect waves-light green darken-4" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-</footer>
+
+<div id="sticky">
+    <footer id="footer" class="page-footer  transparent center">
+        <div class= right">
+            <p id="cPanel" class="center-align"><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/TonyScott44/Hot_Restaurant">GitHub Repo</a></p>
+        </div>
+    </footer>
+</div>
 
 <!-- Materialize's version of compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
@@ -99,5 +206,44 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 </body>
+
+<script type="text/javascript">
+    $("#submit").on("click", function() {
+
+        var newReservation = {
+            guestName:$('#name').val().trim(),
+            guestEmail:$('#email').val().trim(),
+            guestID:$('#uniqueID').val().trim(),
+            guestNumber:$('#phone').val().trim()
+        };
+
+        console.log(newReservation);
+
+        var currentURL = window.location.origin;
+
+
+    $.post(currentURL + "/api/tables", newReservation, function(data){
+
+        if (data===true) {
+            alert("Your party's table has been reserved.");
+        }
+        if (data===false) {
+            alert("Due to our current wait, your party has been placed on the wait list.");
+        }
+
+        $('#name').val("");
+        $('#email').val("");
+        $('#uniqueID').val("");
+        $('#phone').val("");
+
+        });
+
+        return false;
+
+    });
+
+
+
+</script>
 
 </html>
