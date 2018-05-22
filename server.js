@@ -1,24 +1,23 @@
 
-
-//---------------------------------------------------------------------------//
-// Require Express                                                           //
-// ** Simplifies routing using node.js                                       //
-var express = require('express');                                            //
-//---------------------------------------------------------------------------//
-// Make the Express function easy to call                                    //
-var app = express();                                                         //
-//---------------------------------------------------------------------------//
-// Path (built into node/no need to install)                                 //
-// Allows url CRUD                                                           //
-var path = require('path');                                                  //
 //---------------------------------------------------------------------------//
 // Require Body Parser                                                       //
 // **** Allows us to receive our information back in JSON                    //
 //      to make the data easy to manipulate.                                 //
 var bodyParser = require('body-parser');                                     //
 //---------------------------------------------------------------------------//
-// Specify Port
-var PORT = process.env.PORT || 8044;
+// Require Express                                                           //
+// ** Simplifies routing using node.js                                       //
+var express = require('express');                                            //
+//---------------------------------------------------------------------------//
+// Path (built into node/no need to install)                                 //
+// Allows url CRUD                                                           //
+var path = require('path');                                                  //
+//---------------------------------------------------------------------------//
+// Make the Express function easy to call                                    //
+var app = express();                                                         //
+//---------------------------------------------------------------------------//
+// Specify Port                                                              //
+var PORT = process.env.PORT || 8044;                                         //
 //---------------------------------------------------------------------------//
 
 
@@ -41,6 +40,7 @@ app.use(bodyParser.json());                                                  //
 //***************************************************************************//
 //             ** Routing File References **                                 //
 //***************************************************************************//
+require('./app/routing/api-routes.js')(app);                                 //
 require('./app/routing/html-routes.js')(app);                                //
                                                                              //
                                                                              //
